@@ -7,6 +7,7 @@ import com.fh.shop_fhy.vo.AttributeParams;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,5 +28,13 @@ public class AttributeServiceImpl implements AttributeService {
         map.put("count",count);
         map.put("data",attributeList);
         return map;
+    }
+
+    //新增
+    public Object addAttribute(Attribute attribute) {
+        attribute.setCreateDate(new Date());
+        attribute.setAuthor("admin");
+        attributeDao.addAttribute(attribute);
+        return attribute.getId();
     }
 }

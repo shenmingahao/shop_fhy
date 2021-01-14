@@ -1,12 +1,10 @@
 package com.fh.shop_fhy.controller;
 
+import com.fh.shop_fhy.model.Attribute;
 import com.fh.shop_fhy.service.AttributeService;
 import com.fh.shop_fhy.vo.AttributeParams;
 import com.fh.shop_fhy.vo.ReponseData;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -27,5 +25,14 @@ public class AttributeController {
             return ReponseData.error("page和limit不能为空");
         }
         return ReponseData.success(attributeService.queryAttribute(params));
+    }
+
+    //新增
+    @PostMapping("addAttribute")
+    public ReponseData addAttribute(Attribute attribute){
+        if (attribute == null){
+            return ReponseData.error("数据不能为空");
+        }
+        return ReponseData.success(attributeService.addAttribute(attribute));
     }
 }
