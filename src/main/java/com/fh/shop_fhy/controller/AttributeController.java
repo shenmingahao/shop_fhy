@@ -44,4 +44,13 @@ public class AttributeController {
         }
         return ReponseData.success(attributeService.huixian(id));
     }
+
+    //修改
+    @PostMapping("updateAttribute")
+    public ReponseData updateAttribute(Attribute attribute){
+        if (attribute == null){
+            return ReponseData.error("数据不能为空");
+        }
+        return ReponseData.success(attributeService.updateAttribute(attribute));
+    }
 }

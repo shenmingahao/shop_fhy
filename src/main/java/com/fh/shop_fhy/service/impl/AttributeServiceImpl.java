@@ -43,4 +43,12 @@ public class AttributeServiceImpl implements AttributeService {
         Attribute attribute = attributeDao.huixian(id);
         return attribute;
     }
+
+    //修改
+    public Object updateAttribute(Attribute attribute) {
+        attribute.setUpdateDate(new Date());
+        attribute.setAuthor("admin");
+        attributeDao.updateAttribute(attribute);
+        return null;
+    }
 }

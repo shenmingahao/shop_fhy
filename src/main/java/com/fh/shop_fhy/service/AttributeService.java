@@ -9,4 +9,6 @@ public interface AttributeService {
     Object addAttribute(Attribute attribute);
 
     Object huixian(Integer id);
+
+    Object updateAttribute(Attribute attribute);
 }
