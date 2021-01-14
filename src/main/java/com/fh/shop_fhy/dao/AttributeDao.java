@@ -32,4 +32,7 @@ public interface AttributeDao {
     @Update("update shop_attr set name=#{name},nameCH=#{nameCH},typeId=#{typeId},type=#{type},isSkU=#{isSkU},isDel=#{isDel}," +
             "createDate=#{createDate},updateDate=#{updateDate},author=#{author} where id = #{id}")
     void updateAttribute(Attribute attribute);
+
+    @Update("update shop_attr set isDel = 1 where id = #{id}")
+    void deleteAttribute(Integer id);
 }

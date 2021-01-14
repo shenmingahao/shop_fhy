@@ -51,4 +51,10 @@ public class AttributeServiceImpl implements AttributeService {
         attributeDao.updateAttribute(attribute);
         return null;
     }
+
+    //删除
+    public Object deleteAttribute(Integer id) {
+        attributeDao.deleteAttribute(id);
+        return null;
+    }
 }

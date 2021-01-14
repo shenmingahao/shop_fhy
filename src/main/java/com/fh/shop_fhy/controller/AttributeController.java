@@ -53,4 +53,13 @@ public class AttributeController {
         }
         return ReponseData.success(attributeService.updateAttribute(attribute));
     }
+
+    //删除
+    @PostMapping("deleteAttribute")
+    public ReponseData deleteAttribute(Integer id){
+        if (id == null){
+            return ReponseData.error("id不能为空");
+        }
+        return ReponseData.success(attributeService.deleteAttribute(id));
+    }
 }

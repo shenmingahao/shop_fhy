@@ -11,4 +11,6 @@ public interface AttributeService {
     Object huixian(Integer id);
 
     Object updateAttribute(Attribute attribute);
+
+    Object deleteAttribute(Integer id);
 }
