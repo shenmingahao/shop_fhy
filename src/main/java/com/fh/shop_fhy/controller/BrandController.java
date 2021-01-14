@@ -22,11 +22,6 @@ import java.util.UUID;
 @CrossOrigin
 @RequestMapping("api/brand")
 public class BrandController {
-    /*
-    *
-    * 123
-    *
-    * */
     @Resource
     private BrandService brandService;
     @Resource
