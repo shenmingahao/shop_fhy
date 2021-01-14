@@ -7,4 +7,6 @@ public interface AttributeService {
     Object queryAttribute(AttributeParams params);
 
     Object addAttribute(Attribute attribute);
+
+    Object huixian(Integer id);
 }

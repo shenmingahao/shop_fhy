@@ -35,4 +35,13 @@ public class AttributeController {
         }
         return ReponseData.success(attributeService.addAttribute(attribute));
     }
+
+    //回显
+    @PostMapping("huixian")
+    public ReponseData huixian(Integer id){
+        if (id == null){
+            return ReponseData.error("id不能为空");
+        }
+        return ReponseData.success(attributeService.huixian(id));
+    }
 }

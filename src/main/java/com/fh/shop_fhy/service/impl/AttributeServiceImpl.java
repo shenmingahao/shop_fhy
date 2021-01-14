@@ -37,4 +37,10 @@ public class AttributeServiceImpl implements AttributeService {
         attributeDao.addAttribute(attribute);
         return attribute.getId();
     }
+
+    //回显
+    public Object huixian(Integer id) {
+        Attribute attribute = attributeDao.huixian(id);
+        return attribute;
+    }
 }

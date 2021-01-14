@@ -24,4 +24,7 @@ public interface AttributeDao {
             "value (#{name},#{nameCH},#{typeId},#{type},#{isSkU},#{isDel},#{createDate},#{updateDate},#{author})")
     @Options(useGeneratedKeys = true ,keyProperty = "id")
     void addAttribute(Attribute attribute);
+
+    @Select("select id,name,nameCH,typeId,type,isSkU,isDel,createDate,updateDate,author from shop_attr where id = #{id}")
+    Attribute huixian(Integer id);
 }
