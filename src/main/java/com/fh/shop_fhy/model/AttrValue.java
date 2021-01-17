@@ -12,6 +12,8 @@ public class AttrValue {
 
     private Integer attrId;
 
+    private String attrName;
+
     public Integer getId() {
         return id;
     }
@@ -50,5 +52,13 @@ public class AttrValue {
 
     public void setAttrId(Integer attrId) {
         this.attrId = attrId;
+    }
+
+    public String getAttrName() {
+        return attrName;
+    }
+
+    public void setAttrName(String attrName) {
+        this.attrName = attrName;
     }
 }
