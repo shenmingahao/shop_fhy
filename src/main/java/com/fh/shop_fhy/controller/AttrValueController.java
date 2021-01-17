@@ -27,4 +27,13 @@ public class AttrValueController {
         return ReponseData.success(attrValueService.queryAttrValue(attrId));
     }
 
+    //新增
+    @PostMapping("addAttrValue")
+    public ReponseData addAttrValue(AttrValue attrValue){
+        if (attrValue == null){
+            return ReponseData.error("数据不能为空");
+        }
+        return ReponseData.success(attrValueService.addAttrValue(attrValue));
+    }
+
 }

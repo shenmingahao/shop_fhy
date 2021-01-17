@@ -8,6 +8,8 @@ public class AttrValue {
 
     private String nameCH;
 
+    private int isDel;
+
     private Integer attrId;
 
     public Integer getId() {
@@ -32,6 +34,14 @@ public class AttrValue {
 
     public void setNameCH(String nameCH) {
         this.nameCH = nameCH;
+    }
+
+    public int getIsDel() {
+        return isDel;
+    }
+
+    public void setIsDel(int isDel) {
+        this.isDel = isDel;
     }
 
     public Integer getAttrId() {

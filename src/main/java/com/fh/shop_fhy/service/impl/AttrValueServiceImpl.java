@@ -18,4 +18,10 @@ public class AttrValueServiceImpl implements AttrValueService {
         List<AttrValue> attrValueList = attrValueDao.queryAttrValue(attrId);
         return attrValueList;
     }
+
+    //新增
+    public Object addAttrValue(AttrValue attrValue) {
+        attrValueDao.addAttrValue(attrValue);
+        return attrValue.getId();
+    }
 }
