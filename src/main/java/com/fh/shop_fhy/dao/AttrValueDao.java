@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Update;
 import java.util.List;
 
 public interface AttrValueDao {
-    @Select("select av.id,av.name,av.nameCH,av.isDel,av.attrId,ar.name as attrName from shop_attr_value av left join shop_attr ar " +
+    @Select("select av.id,av.name,av.nameCH,av.isDel,av.attrId,ar.nameCH as attrName from shop_attr_value av left join shop_attr ar " +
             "on av.attrId=ar.id where av.attrId = #{attrId} and av.isDel = 0")
     List<AttrValue> queryAttrValue(Integer attrId);
 
