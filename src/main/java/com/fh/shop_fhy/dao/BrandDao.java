@@ -31,7 +31,7 @@ public interface BrandDao {
     Brand huixian(Integer id);
 
     @Update("update shop_brand set name=#{name},bandE=#{bandE},imgPath=#{imgPath},bandDesc=#{bandDesc}," +
-            "ord=#{ord},isDel=#{isDel},createDate=#{createDate},updateDate=#{updateDate},author=#{author}" +
+            "ord=#{ord},updateDate=#{updateDate},author=#{author}" +
             " where id = #{id}")
     void updateBrand(Brand brand);
 

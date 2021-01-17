@@ -29,8 +29,8 @@ public interface AttributeDao {
     @Select("select id,name,nameCH,typeId,type,isSkU,isDel,createDate,updateDate,author from shop_attr where id = #{id}")
     Attribute huixian(Integer id);
 
-    @Update("update shop_attr set name=#{name},nameCH=#{nameCH},typeId=#{typeId},type=#{type},isSkU=#{isSkU},isDel=#{isDel}," +
-            "createDate=#{createDate},updateDate=#{updateDate},author=#{author} where id = #{id}")
+    @Update("update shop_attr set name=#{name},nameCH=#{nameCH},typeId=#{typeId},type=#{type},isSkU=#{isSkU}," +
+            "updateDate=#{updateDate},author=#{author} where id = #{id}")
     void updateAttribute(Attribute attribute);
 
     @Update("update shop_attr set isDel = 1 where id = #{id}")
