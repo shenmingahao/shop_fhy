@@ -21,4 +21,7 @@ public interface AttrValueDao {
 
     @Update("update shop_attr_value set name=#{name},nameCH=#{nameCH},isDel=#{isDel},attrId=#{attrId} where id = #{id}")
     void updateAttrValue(AttrValue attrValue);
+
+    @Update("update shop_attr_value set isDel=1 where id = #{id}")
+    void deleteAttrValue(Integer id);
 }

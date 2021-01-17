@@ -10,4 +10,6 @@ public interface AttrValueService {
     Object huixian(Integer id);
 
     Object updateAttrValue(AttrValue attrValue);
+
+    Object deleteAttrValue(Integer id);
 }

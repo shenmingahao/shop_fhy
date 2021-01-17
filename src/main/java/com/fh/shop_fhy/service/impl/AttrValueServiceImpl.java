@@ -37,5 +37,11 @@ public class AttrValueServiceImpl implements AttrValueService {
         return null;
     }
 
+    //删除
+    public Object deleteAttrValue(Integer id) {
+        attrValueDao.deleteAttrValue(id);
+        return null;
+    }
+
 
 }

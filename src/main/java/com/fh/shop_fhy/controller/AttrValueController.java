@@ -54,4 +54,13 @@ public class AttrValueController {
         return ReponseData.success(attrValueService.updateAttrValue(attrValue));
     }
 
+    //删除
+    @PostMapping("deleteAttrValue")
+    public ReponseData deleteAttrValue(Integer id){
+        if (id == null){
+            return ReponseData.error("id不能为空");
+        }
+        return ReponseData.success(attrValueService.deleteAttrValue(id));
+    }
+
 }
