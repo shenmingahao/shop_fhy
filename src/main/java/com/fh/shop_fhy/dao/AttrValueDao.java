@@ -14,4 +14,7 @@ public interface AttrValueDao {
     @Insert("insert into shop_attr_value (name,nameCH,isDel,attrId) value (#{name},#{nameCH},#{isDel},#{attrId})")
     @Options(useGeneratedKeys = true ,keyProperty = "id")
     void addAttrValue(AttrValue attrValue);
+
+    @Select("select id,name,nameCH,isDel,attrId from shop_attr_value where id = #{id}")
+    AttrValue huixian(Integer id);
 }

@@ -24,4 +24,12 @@ public class AttrValueServiceImpl implements AttrValueService {
         attrValueDao.addAttrValue(attrValue);
         return attrValue.getId();
     }
+
+    //回显
+    public Object huixian(Integer id) {
+        AttrValue attrValue = attrValueDao.huixian(id);
+        return attrValue;
+    }
+
+
 }

@@ -36,4 +36,13 @@ public class AttrValueController {
         return ReponseData.success(attrValueService.addAttrValue(attrValue));
     }
 
+    //回显
+    @PostMapping("huixian")
+    public ReponseData huixian(Integer id){
+        if (id == null){
+            return ReponseData.error("id不能为空");
+        }
+        return ReponseData.success(attrValueService.huixian(id));
+    }
+
 }

@@ -6,4 +6,6 @@ public interface AttrValueService {
     Object queryAttrValue(Integer attrId);
 
     Object addAttrValue(AttrValue attrValue);
+
+    Object huixian(Integer id);
 }
