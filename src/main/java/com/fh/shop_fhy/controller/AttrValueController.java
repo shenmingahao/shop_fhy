@@ -45,4 +45,13 @@ public class AttrValueController {
         return ReponseData.success(attrValueService.huixian(id));
     }
 
+    //修改
+    @PostMapping("updateAttrValue")
+    public ReponseData updateAttrValue(AttrValue attrValue){
+        if (attrValue == null){
+            return ReponseData.error("数据不能为空");
+        }
+        return ReponseData.success(attrValueService.updateAttrValue(attrValue));
+    }
+
 }

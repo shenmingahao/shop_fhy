@@ -8,4 +8,6 @@ public interface AttrValueService {
     Object addAttrValue(AttrValue attrValue);
 
     Object huixian(Integer id);
+
+    Object updateAttrValue(AttrValue attrValue);
 }

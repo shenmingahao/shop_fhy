@@ -31,5 +31,11 @@ public class AttrValueServiceImpl implements AttrValueService {
         return attrValue;
     }
 
+    //修改
+    public Object updateAttrValue(AttrValue attrValue) {
+        attrValueDao.updateAttrValue(attrValue);
+        return null;
+    }
+
 
 }
