@@ -57,4 +57,10 @@ public class AttributeServiceImpl implements AttributeService {
         attributeDao.deleteAttribute(id);
         return null;
     }
+
+    //根据typeId查询所有数据
+    public Object queryAttrByTypeId(Integer typeId) {
+        List<Attribute> attributeList = attributeDao.queryAttrByTypeId(typeId);
+        return attributeList;
+    }
 }
