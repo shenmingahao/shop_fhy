@@ -15,4 +15,6 @@ public interface BrandService {
     Object updateBrand(Brand brand);
 
     Object deleteBrand(Integer id);
+
+    Object queryBrandData();
 }

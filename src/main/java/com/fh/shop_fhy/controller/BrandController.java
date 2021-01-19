@@ -89,4 +89,10 @@ public class BrandController {
         map.put("filePath" , OssFile.uploadFile(img.getInputStream(),newName));
         return map;
     }
+
+    //查询所有数据
+    @PostMapping("queryBrandData")
+    public ReponseData queryBrandData(){
+        return ReponseData.success(brandService.queryBrandData());
+    }
 }

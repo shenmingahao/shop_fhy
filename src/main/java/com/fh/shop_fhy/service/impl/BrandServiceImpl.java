@@ -58,4 +58,10 @@ public class BrandServiceImpl implements BrandService {
         brandDao.deleteBrand(id);
         return null;
     }
+
+    //查询所有数据
+    public Object queryBrandData() {
+        List<Brand> brandList = brandDao.queryBrandData();
+        return brandList;
+    }
 }

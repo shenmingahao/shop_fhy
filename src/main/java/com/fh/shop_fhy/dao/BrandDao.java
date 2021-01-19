@@ -37,4 +37,7 @@ public interface BrandDao {
 
     @Update("update shop_brand set isDel=1 where id = #{id}")
     void deleteBrand(Integer id);
+
+    @Select("select id,name,bandE,imgPath,bandDesc,ord,isDel,createDate,updateDate,author from shop_brand")
+    List<Brand> queryBrandData();
 }
