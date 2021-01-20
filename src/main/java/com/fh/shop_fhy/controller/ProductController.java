@@ -34,4 +34,13 @@ public class ProductController {
         }
         return ReponseData.success(productService.huixian(id));
     }
+
+    //修改
+    @PostMapping("updateProduct")
+    public ReponseData updateProduct(Product product){
+        if (product == null){
+            return ReponseData.error("数据不能为空");
+        }
+        return ReponseData.success(productService.updateProduct(product));
+    }
 }

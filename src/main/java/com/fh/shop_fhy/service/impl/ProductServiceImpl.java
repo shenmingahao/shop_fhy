@@ -26,4 +26,12 @@ public class ProductServiceImpl implements ProductService {
         Product product = productDao.huixaian(id);
         return product;
     }
+
+    //修改
+    public Object updateProduct(Product product) {
+        product.setUpdateDate(new Date());
+        product.setAuthor("admin");
+        productDao.updateProduct(product);
+        return null;
+    }
 }

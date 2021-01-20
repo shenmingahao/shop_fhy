@@ -6,4 +6,6 @@ public interface ProductService {
     Object addProduct(Product product);
 
     Object huixian(Integer id);
+
+    Object updateProduct(Product product);
 }
