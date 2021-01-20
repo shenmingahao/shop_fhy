@@ -25,4 +25,13 @@ public class ProductController {
         }
         return ReponseData.success(productService.addProduct(product));
     }
+
+    //回显
+    @PostMapping("huixian")
+    public ReponseData huixian(Integer id){
+        if (id == null){
+            return ReponseData.error("id不能为空");
+        }
+        return ReponseData.success(productService.huixian(id));
+    }
 }

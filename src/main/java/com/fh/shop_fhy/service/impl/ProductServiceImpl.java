@@ -20,4 +20,10 @@ public class ProductServiceImpl implements ProductService {
         productDao.addProduct(product);
         return product.getId();
     }
+
+    //回显
+    public Object huixian(Integer id) {
+        Product product = productDao.huixaian(id);
+        return product;
+    }
 }

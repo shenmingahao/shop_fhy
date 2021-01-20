@@ -3,6 +3,7 @@ package com.fh.shop_fhy.dao;
 import com.fh.shop_fhy.model.Product;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.Select;
 
 public interface ProductDao {
 
@@ -10,4 +11,7 @@ public interface ProductDao {
             " value (#{name},#{title},#{brandId},#{typeId},#{productdecs},#{price},#{imgPath},#{stocks},#{sortNum},#{createDate},#{isDel},#{author})")
     @Options(useGeneratedKeys = true ,keyProperty = "id")
     void addProduct(Product product);
+
+    @Select("select name,title,brandId,typeId,productdecs,price,imgPath,stocks,sortNum,createDate,isDel,author from shop_product where id = #{id}")
+    Product huixaian(Integer id);
 }
