@@ -34,4 +34,10 @@ public class ProductServiceImpl implements ProductService {
         productDao.updateProduct(product);
         return null;
     }
+
+    //删除
+    public Object deleteProduct(Integer id) {
+        productDao.deleteProduct(id);
+        return null;
+    }
 }

@@ -43,4 +43,13 @@ public class ProductController {
         }
         return ReponseData.success(productService.updateProduct(product));
     }
+
+    //删除
+    @PostMapping("deleteProduct")
+    public ReponseData deleteProduct(Integer id){
+        if (id == null){
+            return ReponseData.error("id不能为空");
+        }
+        return ReponseData.success(productService.deleteProduct(id));
+    }
 }

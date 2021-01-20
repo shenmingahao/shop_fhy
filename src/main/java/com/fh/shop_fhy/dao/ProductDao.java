@@ -19,4 +19,7 @@ public interface ProductDao {
     @Update("update shop_product set name=#{name},title=#{title},brandId=#{brandId},typeId=#{typeId},productdecs=#{productdecs},price=#{price},imgPath=#{imgPath},stocks=#{stocks},sortNum=#{sortNum},updateDate=#{updateDate},author=#{author} " +
             "where id = #{id}")
     void updateProduct(Product product);
+
+    @Update("update shop_product set isdel = 1 where id = #{id}")
+    void deleteProduct(Integer id);
 }
