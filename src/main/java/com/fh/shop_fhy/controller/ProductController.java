@@ -2,6 +2,7 @@ package com.fh.shop_fhy.controller;
 
 import com.fh.shop_fhy.model.Product;
 import com.fh.shop_fhy.service.ProductService;
+import com.fh.shop_fhy.vo.ProductParams;
 import com.fh.shop_fhy.vo.ReponseData;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -57,5 +58,17 @@ public class ProductController {
             return ReponseData.error("id不能为空");
         }
         return ReponseData.success(productService.deleteProduct(id));
+    }
+
+    //查询
+    @PostMapping("queryProduct")
+    public ReponseData queryProduct(ProductParams params){
+        if (params.getPage() == null){
+            return ReponseData.error("page和limit不能为空");
+        }
+        if (params.getLimit() == null){
+            return ReponseData.error("page和limit不能为空");
+        }
+        return ReponseData.success(productService.queryProduct(params));
     }
 }

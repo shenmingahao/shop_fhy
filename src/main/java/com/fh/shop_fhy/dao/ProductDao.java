@@ -1,10 +1,13 @@
 package com.fh.shop_fhy.dao;
 
 import com.fh.shop_fhy.model.Product;
+import com.fh.shop_fhy.vo.ProductParams;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+
+import java.util.List;
 
 public interface ProductDao {
 
@@ -20,6 +23,17 @@ public interface ProductDao {
             "where id = #{id}")
     void updateProduct(Product product);
 
-    @Update("update shop_product set isdel = 1 where id = #{id}")
+    @Update("update shop_product set isDel = 1 where id = #{id}")
     void deleteProduct(Integer id);
+
+    @Select("<script> select count(*) from shop_product where 1=1 and isDel=0 " +
+            "<if test='name != null and name != &quot;&quot;'> and name like CONCAT('%',#{name},'%') </if>" +
+            "</script>")
+    Long queryProductCount(ProductParams params);
+
+    @Select("<script> select id,name,title,brandId,typeId,productdecs,price,imgPath,stocks,sortNum,createDate,updateDate,isDel,author from shop_product where 1=1 and isDel=0 " +
+            "<if test='name != null and name != &quot;&quot;'> and name like CONCAT('%',#{name},'%') </if>" +
+            "limit #{startIndex} , #{limit}" +
+            "</script>")
+    List<Product> queryProduct(ProductParams params);
 }

@@ -7,14 +7,13 @@ import com.fh.shop_fhy.dao.ProductDao;
 import com.fh.shop_fhy.model.Product;
 import com.fh.shop_fhy.model.ProductAttrDatas;
 import com.fh.shop_fhy.service.ProductService;
+import com.fh.shop_fhy.vo.ProductParams;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.beans.Transient;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -87,5 +86,18 @@ public class ProductServiceImpl implements ProductService {
     public Object deleteProduct(Integer id) {
         productDao.deleteProduct(id);
         return null;
+    }
+
+    //查询
+    public Object queryProduct(ProductParams params) {
+        //查询数据总条数
+        Long count = productDao.queryProductCount(params);
+        //计算出下标
+        params.setStartIndex((params.getPage()-1)*params.getLimit());
+        List<Product> productList = productDao.queryProduct(params);
+        Map map = new HashMap();
+        map.put("count",count);
+        map.put("data",productList);
+        return map;
     }
 }
