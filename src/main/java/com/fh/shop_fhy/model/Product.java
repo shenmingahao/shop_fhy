@@ -61,12 +61,12 @@ public class Product {
         this.title = title;
     }
 
-    public Integer getBandId() {
+    public Integer getBrandId() {
         return brandId;
     }
 
-    public void setBandId(Integer bandId) {
-        this.brandId = bandId;
+    public void setBrandId(Integer brandId) {
+        this.brandId = brandId;
     }
 
     public Integer getTypeId() {

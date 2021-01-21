@@ -19,11 +19,17 @@ public class ProductController {
 
     //新增
     @PostMapping("addProduct")
-    public ReponseData addProduct(Product product){
+    public ReponseData addProduct(Product product , String attr , String sku){
         if (product == null){
             return ReponseData.error("数据不能为空");
         }
-        return ReponseData.success(productService.addProduct(product));
+        if (attr == null){
+            return ReponseData.error("数据不能为空");
+        }
+        if (sku == null){
+            return ReponseData.error("数据不能为空");
+        }
+        return ReponseData.success(productService.addProduct(product , attr , sku));
     }
 
     //回显
