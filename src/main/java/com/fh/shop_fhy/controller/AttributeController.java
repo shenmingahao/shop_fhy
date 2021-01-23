@@ -71,4 +71,13 @@ public class AttributeController {
         }
         return ReponseData.success(attributeService.queryAttrByTypeId(typeId));
     }
+
+    //根据typeId查询所有数据
+    @PostMapping("queryAttrDataByTypeId")
+    public ReponseData queryAttrDataByTypeId(Integer typeId){
+        if (typeId == null){
+            return ReponseData.error("typeId不能为空");
+        }
+        return ReponseData.success(attributeService.queryAttrDataByTypeId(typeId));
+    }
 }

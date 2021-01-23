@@ -15,4 +15,6 @@ public interface AttributeService {
     Object deleteAttribute(Integer id);
 
     Object queryAttrByTypeId(Integer typeId);
+
+    Object queryAttrDataByTypeId(Integer typeId);
 }

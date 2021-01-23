@@ -36,6 +36,9 @@ public interface AttributeDao {
     @Update("update shop_attr set isDel = 1 where id = #{id}")
     void deleteAttribute(Integer id);
 
-    @Select("select id,name,nameCH,typeId,type,isSkU,isDel,createDate,updateDate,author from shop_attr where typeId = #{typeId}")
+    @Select("select id,name,nameCH,typeId,type,isSkU,isDel,createDate,updateDate,author from shop_attr where typeId = #{typeId} and isDel = 0")
     List<Attribute> queryAttrByTypeId(Integer typeId);
+
+    @Select("select id,name,nameCH,typeId,type,isSkU,isDel,createDate,updateDate,author from shop_attr where typeId = #{typeId} and isDel = 0")
+    List<Attribute> queryAttrDataByTypeId(Integer typeId);
 }

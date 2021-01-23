@@ -25,4 +25,8 @@ public interface AttrValueDao {
 
     @Update("update shop_attr_value set isDel=1 where id = #{id}")
     void deleteAttrValue(Integer id);
+
+    @Select("select av.id,av.name,av.nameCH,av.isDel,av.attrId,ar.nameCH as attrName from shop_attr_value av left join shop_attr ar " +
+            "on av.attrId=ar.id where av.attrId = #{attrId} and av.isDel = 0")
+    List<AttrValue> queryAllDataByAid(Integer id);
 }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 
 public class Attribute {
 
@@ -28,6 +29,16 @@ public class Attribute {
     private Date updateDate;
 
     private String author;
+
+    private List<AttrValue> values;
+
+    public List<AttrValue> getValues() {
+        return values;
+    }
+
+    public void setValues(List<AttrValue> values) {
+        this.values = values;
+    }
 
     public Integer getId() {
         return id;
