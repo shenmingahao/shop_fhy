@@ -13,4 +13,6 @@ public interface ProductService {
     Object deleteProduct(Integer id);
 
     Object queryProduct(ProductParams params);
+
+    Object queryProductAttrDatasByProId(Integer proId);
 }

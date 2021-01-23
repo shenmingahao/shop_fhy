@@ -56,8 +56,6 @@ public class ProductServiceImpl implements ProductService {
             pads.setProId(product.getId());
             pads.setPrice(o.getDouble("price"));
             pads.setStorcks(o.getInteger("storcks"));
-            o.remove("price");
-            o.remove("storcks");
             pads.setAttrData(objectssku.get(i).toString());
             //放入集合
             padList.add(pads);
@@ -99,5 +97,11 @@ public class ProductServiceImpl implements ProductService {
         map.put("count",count);
         map.put("data",productList);
         return map;
+    }
+
+    //根据proId查询商品属性值的数据
+    public Object queryProductAttrDatasByProId(Integer proId) {
+        List<ProductAttrDatas> productAttrDatasList = productAttrDatasDao.queryProductAttrDatasByProId(proId);
+        return productAttrDatasList;
     }
 }

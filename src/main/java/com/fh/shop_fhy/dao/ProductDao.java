@@ -16,7 +16,7 @@ public interface ProductDao {
     @Options(useGeneratedKeys = true ,keyProperty = "id")
     void addProduct(Product product);
 
-    @Select("select name,title,brandId,typeId,productdecs,price,imgPath,stocks,sortNum,createDate,updateDate,isDel,author from shop_product where id = #{id}")
+    @Select("select id,name,title,brandId,typeId,productdecs,price,imgPath,stocks,sortNum,createDate,updateDate,isDel,author from shop_product where id = #{id}")
     Product huixaian(Integer id);
 
     @Update("update shop_product set name=#{name},title=#{title},brandId=#{brandId},typeId=#{typeId},productdecs=#{productdecs},price=#{price},imgPath=#{imgPath},stocks=#{stocks},sortNum=#{sortNum},updateDate=#{updateDate},author=#{author} " +
@@ -33,7 +33,7 @@ public interface ProductDao {
 
     @Select("<script> select id,name,title,brandId,typeId,productdecs,price,imgPath,stocks,sortNum,createDate,updateDate,isDel,author from shop_product where 1=1 and isDel=0 " +
             "<if test='name != null and name != &quot;&quot;'> and name like CONCAT('%',#{name},'%') </if>" +
-            "limit #{startIndex} , #{limit}" +
+            " order by id desc limit #{startIndex} , #{limit} " +
             "</script>")
     List<Product> queryProduct(ProductParams params);
 }

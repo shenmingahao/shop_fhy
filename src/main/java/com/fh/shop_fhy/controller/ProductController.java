@@ -71,4 +71,14 @@ public class ProductController {
         }
         return ReponseData.success(productService.queryProduct(params));
     }
+
+    //根据proId查询商品属性值的数据
+    @PostMapping("queryProductAttrDatasByProId")
+    public ReponseData queryProductAttrDatasByProId(Integer proId){
+        if (proId == null){
+            return ReponseData.error("proId不能为空");
+        }
+        return ReponseData.success(productService.queryProductAttrDatasByProId(proId));
+    }
+
 }
